@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FormGroup, Label, Input, Button } from 'reactstrap';
-
+import { FormGroup, Label, Input, Button, Wrapper } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 export default class SignInPage extends React.Component {
@@ -34,11 +34,23 @@ render() {
                 </Label>
             </FormGroup>
             <Bottom>
-                <Button></Button>
-                <TextLink></TextLink>
+                <Button color="primary">Sign in</Button>
+                <TextLink href="#">Forgot password?</TextLink>
+                <TextLink href="#">Sign up</TextLink>
             </Bottom>
         </View>   
         </Wrapper>
     );
 }
 };
+
+const Wrapper = styled.div`
+display: flex;
+justify-content: center;
+user-select: none;
+`;
+
+const View = styled.div`
+width: 40rem;
+`;
+
