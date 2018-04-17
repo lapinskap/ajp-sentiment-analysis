@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route} from 'react-router-dom';
+import AppRouter from './routers/AppRouter';
 import 'normalize.css/normalize.css';
-import './styles/styles.scss';
-import Button from 'react-bootstrap/lib/Button';
+import './styles/style.scss';
 
-ReactDOM.render(<p>Here is my great new app</p> , document.getElementById('app'));
+
+
+ReactDOM.render(<AppRouter />, document.getElementById('app'));
