@@ -1,56 +1,94 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FormGroup, Label, Input, Button, Wrapper } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import React from "react";
+import styled from "styled-components";
 
+import AuthTemplate from "./AuthTemplate";
+import { Button } from "reactstrap";
 
-export default class SignInPage extends React.Component {
-render() {
+import { Form, Field } from "react-final-form";
+
+import renderInput from "../components2/Input";
+import renderCheckbox from "../components2/Checkbox";
+
+import colors from "../colors";
+
+const composeValidators = (...validators) => value =>
+  validators.reduce((error, validator) => error || validator(value), undefined);
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const required = value => (value ? undefined : "Field is required");
+const email = value =>
+  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+    ? "Invalid email address"
+    : undefined;
+
+class SignIn extends React.Component {
+  onSubmit = async data => {
+    await sleep(2000);
+    console.log(data);
+  };
+
+  render() {
     return (
-        <Wrapper>
-         <View>
-            <Header>
-             <Logo src="" />
-             <AppName>AJP Sentiment Analysis</AppName>
-            </Header>
-            <Title>Sign in to your account</Title>
-            <FormGroup>
-                <Label for="email">Email address:</Label>
-                <Input type="email" name="email" id="email" placeholder=""/>
-            </FormGroup>
-            <FormGroup>
-                <Label for="password">Password:</Label>
-                <Input 
-                type="password"
+      <AuthTemplate>
+        <Title>Sign in to your account</Title>
+
+        <Form
+          onSubmit={this.onSubmit}
+          render={({ handleSubmit, pristine, invalid }) => (
+            <form onSubmit={handleSubmit}>
+              <Field
+                name="email"
+                component={renderInput}
+                type="text"
+                label="Email address:"
+                validate={composeValidators(required, email)}
+              />
+              <Field
                 name="password"
-                id="password"
-                placeholder=""
-                />
-            </FormGroup>
-            <FormGroup className="custom-control custom-checkbox">
-                <Input type="checkbox" className="custom-control-input" id="xyz"/>
-                <Label className="custom-control-panel" for="xyz">
-                I agree to the Terms of Service and Privacy Policy
-                </Label>
-            </FormGroup>
-            <Bottom>
+                component={renderInput}
+                type="password"
+                label="Password:"
+                validate={required}
+              />
+              <Field
+                name="tos"
+                component={renderCheckbox}
+                label="I agree to the Terms of Service and Privacy Policy"
+                validate={required}
+              />
+
+              <Bottom>
                 <Button color="primary">Sign in</Button>
                 <TextLink href="#">Forgot password?</TextLink>
                 <TextLink href="#">Sign up</TextLink>
-            </Bottom>
-        </View>   
-        </Wrapper>
+              </Bottom>
+            </form>
+          )}
+        />
+      </AuthTemplate>
     );
+  }
 }
-};
 
-const Wrapper = styled.div`
-display: flex;
-justify-content: center;
-user-select: none;
+const Title = styled.div`
+  color: ${colors.primary};
+  margin: 30px 0px;
+  font-size: 18px;
+  font-weight: 300;
+`;
+const Bottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const TextLink = styled.a`
+  color: ${colors.secondary};
+  font-size: 14px;
+
+  &:hover {
+    color: ${colors.secondary};
+  }
 `;
 
-const View = styled.div`
-width: 40rem;
-`;
-
+export default SignIn;
