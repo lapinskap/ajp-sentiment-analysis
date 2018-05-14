@@ -1,4 +1,3 @@
-
 import React from "react";
 import styled from "styled-components";
 
@@ -6,19 +5,19 @@ import colors from "../colors";
 
 const AuthTemplate = ({ children }) => {
   return (
-    <Wrapper>
+    <Div>
       <View>
         <Header>
-          <Logo src="/img/logo.png" />
+          <Logo src="../public/images/logo.png" />
           <AppName>AJP Sentiment Analysis</AppName>
         </Header>
         {children}
       </View>
-    </Wrapper>
+    </Div>
   );
 };
 
-const Wrapper = styled.div`
+const Div = styled.div`
   display: flex;
   justify-content: center;
   user-select: none;

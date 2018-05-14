@@ -1,12 +1,12 @@
 import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import React from 'react';
 
-import Header from '../components/Header';
-import NotFoundPage from '../components/NotFoundPage';
-import AuthTemplate from '../components/AuthTemplate';
-import SignInPage from '../components/SignInPage';
-import CreateAccountPage from '../components/CreateAccountPage';
-import ChangePasswordPage from '../components/ChangePasswordPage';
+import Header from '../Auth/Header';
+import NotFoundPage from '../Auth/NotFoundPage';
+import AuthTemplate from '../Auth/AuthTemplate';
+import SignInPage from '../Auth/SignInPage';
+import CreateAccountPage from '../Auth/CreateAccountPage';
+import ChangePasswordPage from '../Auth/ChangePasswordPage';
 
 const AppRouter = () => (
     <BrowserRouter>

@@ -1,14 +1,11 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import styled from "styled-components";
-
 import AuthTemplate from "./AuthTemplate";
 import { Button } from "reactstrap";
-
 import { Form, Field } from "react-final-form";
-
-import renderInput from "../components2/Input";
-import renderCheckbox from "../components2/Checkbox";
-
+import renderInput from "../components/Input";
+import renderCheckbox from "../components/Checkbox";
 import colors from "../colors";
 
 const composeValidators = (...validators) => value =>
@@ -85,6 +82,7 @@ const Bottom = styled.div`
 const TextLink = styled.a`
   color: ${colors.secondary};
   font-size: 14px;
+  color: red;
 
   &:hover {
     color: ${colors.secondary};
