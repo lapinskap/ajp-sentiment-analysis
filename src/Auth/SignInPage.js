@@ -29,11 +29,11 @@ class SignIn extends React.Component {
     return (
       <AuthTemplate>
         <Title>Sign in to your account</Title>
-
         <Form
           onSubmit={this.onSubmit}
           render={({ handleSubmit, pristine, invalid }) => (
             <form onSubmit={handleSubmit}>
+            
               <Field
                 name="email"
                 component={renderInput}

@@ -16,9 +16,7 @@ const renderCheckbox = ({ input, meta, label, ...props }) => {
       />
       <Label className="custom-control-label">{label}</Label>
 
-      {showError && (
-        <Error invalid={showError ? "true" : "false"}>{meta.error}</Error>
-      )}
+      {showError && (<Error invalid={showError ? "true" : "false"}>{meta.error}</Error> )}
     </FormGroup>
   );
 };

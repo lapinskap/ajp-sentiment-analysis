@@ -7,6 +7,7 @@ import AuthTemplate from '../Auth/AuthTemplate';
 import SignInPage from '../Auth/SignInPage';
 import CreateAccountPage from '../Auth/CreateAccountPage';
 import ChangePasswordPage from '../Auth/ChangePasswordPage';
+import Profile from '../Auth/Profile';
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -17,6 +18,7 @@ const AppRouter = () => (
             <Route path="/newaccount" component={CreateAccountPage}/>
             <Route path="/password" component={ChangePasswordPage} />
             <Route path="/signin" component={SignInPage} />
+            <Route path={"/profile"} component={Profile}/>
             <Route component={NotFoundPage}/>
 
         </Switch>
