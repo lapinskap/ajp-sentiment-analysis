@@ -18,8 +18,7 @@ Backend is practically unaffected (at the present time).
 I would like to write it some day - with Node or Ruby on Rails.
 
 
-The application was created as a result of attending a laboratory with programming at a local university (while I was still in high school).
-
+The application was created as a result of attending a laboratory with programming at a local university ("AJP" - http://ajp.edu.pl/)
 
 ## Screenshots
 ![Example screenshot](https://raw.githubusercontent.com/lapinskap/ajp-sentiment-analysis/master/img/signin.jpg)
