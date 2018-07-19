@@ -1,0 +1,28 @@
+@import "bootstrap/scss/bootstrap.scss";
+
+//Colors
+$background: #f6fafd;
+$primary: #9585c4;
+$secondary: #4ec2e2;
+$text-dark: #7387a9;
+$text-light: #94a2bf;
+
+$theme-colors: (
+  "primary": #9585c4,
+  "secondary": #4ec2e2,
+  "success": #03cba7,
+  "warning": #f6c66c,
+  "danger": #ec6670
+);
+
+$dark: #fff;
+$light: #94a2bf;
+
+$body-bg: #f6fafd;
+
+//Spacings
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+$desktop-breakpoint: 45rem;

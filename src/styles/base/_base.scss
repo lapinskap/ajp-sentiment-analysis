@@ -1,0 +1,44 @@
+@import "bootstrap/scss/bootstrap.scss";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Hind Vadodara", "-apple-system", "BlinkMacSystemFont", "Segoe UI",
+    "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: $m-size;
+    background: $background;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+.form-control {
+    border-color: #e5e9f4;
+  }
+  
+  .btn {
+    font-size: 14px;
+    padding: 10px 40px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    font-weight: 300;
+    color: $light;
+    margin-bottom: 0.3rem;
+  }
+  
+  .custom-checkbox .custom-control-label::before {
+    background-color: #fff;
+    border: 1px solid #e5e9f4;
+    border-radius: 2px;
+  }
+  
